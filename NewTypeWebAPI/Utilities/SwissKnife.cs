@@ -21,5 +21,11 @@ namespace NewTypeWebAPI.Utilities
         {
             Console.WriteLine(message);
         }
+
+        public static void ServerInit()
+        {
+            ServerStart.LoadAllClasses();
+            ServerStart.SetupLoggerSetting();
+        }
     }
 }
