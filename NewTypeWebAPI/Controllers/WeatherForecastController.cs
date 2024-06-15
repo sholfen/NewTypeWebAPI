@@ -21,6 +21,9 @@ namespace NewTypeWebAPI.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
+            string dtStr = DateTime.Now.ToString();
+            _logger.LogInformation($"Time: {dtStr}");
+            Serilog.Log.Information(dtStr);
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
