@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddMvc();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -31,10 +32,19 @@ builder.Logging.AddConsole();
 //setup Serilog
 builder.Services.AddSerilog();
 
+//session
+builder.Services.AddStackExchangeRedisCache(option =>
+option.Configuration = builder.Configuration.GetConnectionString("RedisSession"));//DistributedSession
+builder.Services.AddSession();
+
+builder.Services.AddControllers().AddJsonStreamer();
+
 var app = builder.Build();
 
 //Serilog
 app.UseSerilogRequestLogging();
+
+app.UseSession();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -45,9 +55,15 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseRouting();
+
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+//app.MapControllers();
 
 app.Run();
 

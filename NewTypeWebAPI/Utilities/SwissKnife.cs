@@ -7,6 +7,7 @@ namespace NewTypeWebAPI.Utilities
         static SwissKnife()
         {
             Logger = new FileLogger(); 
+            //Logger = FileLogger.Default;
         }
 
         private static ILogger Logger;
