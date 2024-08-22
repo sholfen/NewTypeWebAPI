@@ -1,5 +1,9 @@
 {
-  "insert": "insert into"
+  "insert": "insert into",
+  "Employee": {
+    "Select": "select * from Employees;"
+  },
+  "Company": {
 
-
+  }
 }
