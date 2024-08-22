@@ -1,4 +1,5 @@
 ﻿using NewTypeWebAPI.Utilities.Logging;
+using System.Collections.Concurrent;
 
 namespace NewTypeWebAPI.Utilities
 {
@@ -27,6 +28,26 @@ namespace NewTypeWebAPI.Utilities
         {
             ServerStart.LoadAllClasses();
             ServerStart.SetupLoggerSetting();
+        }
+
+        public static void RequestDelay(string token, string requestId)
+        {
+
+        }
+
+        public static string ToStringYYYYMMDD(this DateTime dt)
+        {
+            return dt.ToString(@"yyyy/MM/DD");
+        }
+    }
+
+    public class RequestDelayHelper
+    {
+        private ConcurrentDictionary<string, string> _dic = new ConcurrentDictionary<string, string>();
+
+        public RequestDelayHelper()
+        {
+
         }
     }
 }
