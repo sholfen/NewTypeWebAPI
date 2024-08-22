@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogicLib", "Busines
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataRepository", "DataRepository\DataRepository.csproj", "{AD2BF8C7-BE8E-455B-9BFC-BB19697021C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobLib", "JobLib\JobLib.csproj", "{5820D0C4-3676-4CAC-B191-EBC048571A9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobLib", "JobLib\JobLib.csproj", "{5820D0C4-3676-4CAC-B191-EBC048571A9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewTypeTestProject", "NewTypeTestProject\NewTypeTestProject.csproj", "{EB7B7BCA-5C6D-422C-8474-CA6A5BBFFBBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{5820D0C4-3676-4CAC-B191-EBC048571A9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5820D0C4-3676-4CAC-B191-EBC048571A9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5820D0C4-3676-4CAC-B191-EBC048571A9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB7B7BCA-5C6D-422C-8474-CA6A5BBFFBBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB7B7BCA-5C6D-422C-8474-CA6A5BBFFBBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB7B7BCA-5C6D-422C-8474-CA6A5BBFFBBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB7B7BCA-5C6D-422C-8474-CA6A5BBFFBBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
