@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace NewTypeWebAPI.Controllers
 {
@@ -22,13 +22,7 @@ namespace NewTypeWebAPI.Controllers
         [HttpGet]
         public IActionResult GetString(string key)
         {
-            string temp = string.Empty;
-
-            temp = HttpContext.Session.GetString(key);
-            if (string.IsNullOrEmpty(temp))
-            {
-                temp = string.Empty;
-            }
+            string temp = HttpContext.Session.GetString(key) ?? string.Empty;
 
             return Content(temp);
         }

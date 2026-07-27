@@ -44,6 +44,9 @@ var app = builder.Build();
 //Serilog
 app.UseSerilogRequestLogging();
 
+// Add exception handling middleware
+app.UseMiddleware<NewTypeWebAPI.Middleware.ExceptionHandlingMiddleware>();
+
 app.UseSession();
 
 // Configure the HTTP request pipeline.

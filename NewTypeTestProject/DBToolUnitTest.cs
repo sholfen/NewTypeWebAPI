@@ -12,9 +12,15 @@ namespace NewTypeTestProject
         }
 
         [Fact]
-        public void GetSQLCommandTest()
+        public void LoadSQLtoCacheTest2()
         {
             DBTools.LoadSQLtoCache();
+            GetSQLCommandTest();
+        }
+
+        [Fact]
+        public void GetSQLCommandTest()
+        {
             string id = "Employee";
             string key = "Select";
             string command = DBTools.GetSQL(id, key);

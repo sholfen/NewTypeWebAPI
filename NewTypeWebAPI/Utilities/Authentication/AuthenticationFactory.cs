@@ -1,4 +1,4 @@
-﻿using NewTypeWebAPI.Utilities.Cache;
+using NewTypeWebAPI.Utilities.Cache;
 
 namespace NewTypeWebAPI.Utilities.Authentication
 {
@@ -57,26 +57,16 @@ namespace NewTypeWebAPI.Utilities.Authentication
 
     public class AuthenticationFactory
     {
-        private static AuthenticationFactory? instance;
+        private static readonly AuthenticationFactory instance = new AuthenticationFactory();
 
         private AuthenticationFactory()
         {
 
         }
 
-        public static AuthenticationFactory Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new AuthenticationFactory();
-                }
-                return instance;
-            }
-        }
+        public static AuthenticationFactory Instance => instance;
 
-        public IAuthenticator GetAuthenticator(LoginType loginType)
+        public IAuthenticator? GetAuthenticator(LoginType loginType)
         {
             IAuthenticator? authenticator = null;
 
